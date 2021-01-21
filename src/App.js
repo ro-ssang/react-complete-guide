@@ -7,14 +7,14 @@ import Person from "./Person/Person";
 const StyledButton = styled.button`
   padding: 8px;
   color: white;
-  background-color: green;
+  background-color: ${(props) => (props.alt ? "red" : "green")};
   border: 1px solid blue;
   font: inherit;
   cursor: pointer;
 
   &:hover {
     color: black;
-    background-color: lightgreen;
+    background-color: ${(props) => (props.alt ? "salmon" : "lightgreen")};
   }
 `;
 
@@ -87,7 +87,9 @@ class App extends Component {
       <div className="App">
         <h1>Hi, I'm a React App</h1>
         <p className={classes.join(" ")}>This is really working!</p>
-        <StyledButton onClick={this.togglePersonsHandler}>Toggle Buttons</StyledButton>
+        <StyledButton alt={this.state.showPersons} onClick={this.togglePersonsHandler}>
+          Toggle Buttons
+        </StyledButton>
         {persons}
       </div>
     );
