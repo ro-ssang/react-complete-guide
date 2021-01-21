@@ -10,7 +10,7 @@
   font-weight: bold;
 }
 
-.button {
+.Button {
   padding: 8px;
   color: white;
   background-color: green;
@@ -19,7 +19,15 @@
   cursor: pointer;
 }
 
-.button:hover {
+.Button:hover {
   color: black;
   background-color: lightgreen;
+}
+
+.Button.Red {
+  background-color: red;
+}
+
+.Button.Red:hover {
+  background-color: salmon;
 }
